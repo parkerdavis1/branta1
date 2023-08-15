@@ -3,21 +3,21 @@ import { Icon } from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
+import branta from '~/assets/Branta Web-logos_transparent2.png'
+
 const navItems: Array<NavItem> = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "Services", url: "#services" },
+  { title: "About", url: "#about" },
 ];
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
+  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-2 text-white"
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="h-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <!-- <h1>Branta Web</h1> -->
+    <img src={branta.src} alt="Branta Web logo" class="h-12 grayscale opacity-0 transition-all duration-500" id="logo">
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -44,6 +44,7 @@ const navItems: Array<NavItem> = [
       </button>
       <ThemeSwitcher />
     </div>
+
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
       <div class="fixed inset-0 bg-default px-8 py-4 text-default">
         <div class="space-y-4" role="dialog" aria-modal="true">
@@ -57,9 +58,6 @@ const navItems: Array<NavItem> = [
               <Icon pack="mdi" name="close" class="h-8" />
             </button>
           </header>
-          <div class="flex justify-center">
-            <Icon name="logomark" class="h-16" />
-          </div>
           <nav>
             <ul class="flex flex-col">
               {
@@ -134,5 +132,8 @@ const navItems: Array<NavItem> = [
   }
   .modal.is-open {
     @apply block;
+  }
+  :global(.fixed-header) #logo {
+    @apply opacity-100;
   }
 </style>

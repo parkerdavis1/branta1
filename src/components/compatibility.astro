@@ -35,55 +35,15 @@ const frameworks: Array<CompatibilityItem> = [
     url: "https://lit.dev/",
   },
 ];
-
-const platforms: Array<CompatibilityItem> = [
-  {
-    title: "Netlify",
-    icon: "platforms/netlify",
-    url: "https://www.netlify.com/",
-  },
-  {
-    title: "Vercel",
-    icon: "platforms/vercel",
-    url: "https://vercel.com/",
-  },
-  {
-    title: "Cloudflare",
-    icon: "fa-brands:cloudflare",
-    url: "https://pages.cloudflare.com/",
-  },
-  {
-    title: "Render",
-    icon: "platforms/render",
-    url: "https://render.com/",
-  },
-  {
-    title: "GitHub",
-    icon: "fa-brands:github",
-    url: "https://pages.github.com/",
-  },
-  {
-    title: "GitLab",
-    icon: "fa-brands:gitlab",
-    url: "https://docs.gitlab.com/ee/user/project/pages/",
-  },
-];
 ---
 
-<ContentSection title="Compatibility" id="compatibility">
+<ContentSection title="About" id="about">
   <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>.
+    Branta Web was founded by <span class="text-primary">Parker Davis</span>, a software engineer with a background in field biology research and music.  Years of experience working with various environmental organizations, he became familiar with the common technological obstacles organizations face and wants to make the integration of the two effortless. 
   </Fragment>
   <CompatibilityList
     items={frameworks}
     title="Frameworks"
     url="https://docs.astro.build/core-concepts/framework-components/"
-  />
-  <CompatibilityList
-    items={platforms}
-    title="Platforms"
-    url="https://docs.astro.build/guides/deploy/"
   />
 </ContentSection>
