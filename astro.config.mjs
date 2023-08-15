@@ -18,5 +18,6 @@ export default defineConfig({
   },
   experimental: {
     assets: true
-  }
+  },
+  server: { port: 1234 }
 });

@@ -6,7 +6,15 @@ a,
   @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
 }
 
+.button {
+  @apply rounded-lg border bg-[var(--color-primary)] px-4 py-2 text-white
+}
+
 .gradient-text {
   @apply bg-clip-text text-transparent;
   @apply bg-gradient-to-r from-emerald-500 to-lime-600;
+}
+
+section {
+  @apply my-20 p-4
 }

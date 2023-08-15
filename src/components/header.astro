@@ -3,21 +3,26 @@ import { Icon } from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
-import branta from '~/assets/Branta Web-logos_transparent2.png'
+import branta from '~/assets/Branta Web-logos_black-trim.png'
+import brantaSVG from '~/assets/Branta Web-logos_transparent.svg'
+import brantaGreen from '~/assets/Branta Web-logos_transparent2.png'
 
 const navItems: Array<NavItem> = [
-  { title: "Services", url: "#services" },
-  { title: "About", url: "#about" },
+  { title: "Services", url: "/#services" },
+  { title: "About", url: "/#about" },
 ];
+
+const { fixed } = Astro.props
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-2 text-white"
+  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-2 sm:px-8 py-2"
+  class:list={[fixed ? 'fixed-header' : 'text-white']}
+  data-fixed={fixed}
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="#">
-    <!-- <h1>Branta Web</h1> -->
-    <img src={branta.src} alt="Branta Web logo" class="h-12 grayscale opacity-0 transition-all duration-500" id="logo">
+  <a class="flex items-center gap-3 hover:!text-default" href="/">
+    <img src={branta.src} alt="Branta Web" class="h-12 opacity-0 transition-all duration-500" id="logo">
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -42,7 +47,6 @@ const navItems: Array<NavItem> = [
       >
         <Icon pack="mdi" name="menu" class="h-8" />
       </button>
-      <ThemeSwitcher />
     </div>
 
     <div id="menu-modal" class="modal hidden" aria-hidden="true">
@@ -105,10 +109,12 @@ const navItems: Array<NavItem> = [
   openNavButton.addEventListener("click", openMenu);
   closeNavButton.addEventListener("click", closeMenu);
 
-  document.addEventListener("scroll", () => {
-    const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-    header.classList.toggle("fixed-header", d < 0);
-  });
+  if (!header.dataset.fixed) {
+    document.addEventListener("scroll", () => {
+      const d = page.clientHeight - page.scrollTop - header.offsetHeight;
+      header.classList.toggle("fixed-header", d < 0);
+    });
+  }
 
   menu.addEventListener("click", (event) => {
     if ((event.target as HTMLElement).tagName === "A") {

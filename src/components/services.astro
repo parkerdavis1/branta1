@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/content-section.astro";
+---
+
+<section class="flex flex-col items-center gap-16" id="services">
+  <h2 class="gradient-text text-center font-extrabold tracking-tight text-6xl mt-16">
+    Services
+  </h2>
+  <ul class="grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-3 lg:gap-0">
+    <li
+      class="flex flex-col items-center gap-4 border border-default bg-offset p-6"
+    >
+      <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+        <Icon name="mdi:pencil-ruler" />
+      </div>
+      <p class="text-center font-extrabold text-xl">
+        Website Design and Development
+      </p>
+      <p class="text-center text-offset text-sm">
+        Superb user experience, accessibility, hosting, SSL encryption, analytics
+      </p>
+    </li>
+
+    <li
+      class="flex flex-col items-center gap-4 border border-default bg-offset p-6"
+    >
+      <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+        <Icon name="mdi:application-brackets-outline" />
+      </div>
+      <p class="text-center font-extrabold text-xl">Custom applications</p>
+      <p class="text-center text-offset text-sm">
+        Custom applications for any need: outreach, education,
+        administration, data collection and data visualization
+      </p>
+      <!-- <ul class="text-offset text-sm">
+        <li>Outreach and education</li>
+        <li>Data collection and management</li>
+        <li>Data visualization</li>
+      </ul> -->
+    </li>
+
+    <li
+      class="flex flex-col items-center gap-4 border border-default bg-offset p-6"
+    >
+      <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+        <Icon name="mdi:database" />
+      </div>
+      <p class="text-center font-extrabold text-xl">Database management</p>
+      <p class="text-center text-offset text-sm">
+        Keep your data secure, optimized, and accessible
+      </p>
+    </li>
+  </ul>
+</section>

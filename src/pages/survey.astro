@@ -1,0 +1,27 @@
+---
+import BaseLayout from "~/layouts/base.astro";
+import Header from "~/components/header.astro";
+---
+
+<BaseLayout>
+  <Header fixed="true" />
+  <section class="grid place-items-center p-4">
+    <div class="w-full max-w-lg mb-8 py-4">
+      <p>Please fill out this short survey to receive a free 30-minute consultation and discount on all future services.</p>
+    </div>
+    <form class="m-auto flex w-full max-w-lg flex-col gap-4" data-netlify="true">
+      <label for="name">Name</label>
+      <input type="text" name="name" />
+
+      <label>Organization</label>
+      <input type="text" />
+
+      <label>Phone</label>
+      <input type="text" />
+
+      <label>Comments</label>
+      <textarea class="h-40 w-full"></textarea>
+      <button class="btn button">Submit</button>
+    </form>
+  </section>
+</BaseLayout>
