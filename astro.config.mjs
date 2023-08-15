@@ -1,4 +1,3 @@
-import image from "@astrojs/image";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 
@@ -7,9 +6,6 @@ export default defineConfig({
   site: "https://astro-moon-landing.netlify.app/",
   integrations: [
     tailwind(),
-    image({
-      serviceEntryPoint: "@astrojs/image/sharp",
-    }),
   ],
   vite: {
     ssr: {
@@ -17,7 +13,8 @@ export default defineConfig({
     },
   },
   experimental: {
-    assets: true
+    assets: true,
+    viewTransitions: true
   },
   server: { port: 1234 }
 });
