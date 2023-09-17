@@ -9,19 +9,153 @@ import Header from "~/components/header.astro";
     <div class="w-full max-w-lg mb-8 py-4">
       <p>Please fill out this short survey to receive a free 30-minute consultation and discount on future services.</p>
     </div>
-    <form class="m-auto flex w-full max-w-lg flex-col gap-4" data-netlify="true">
-      <label for="name">Name</label>
-      <input type="text" name="name" />
+    <form class="m-auto flex w-full max-w-lg flex-col gap-8" data-netlify="true">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" class="block w-full" />
+      </div>
 
-      <label>Organization</label>
-      <input type="text" />
+      <div>
+        <label for="organization">Organization</label>
+        <input type="text" name="organization"  class="block w-full" />
+      </div>
 
-      <label>Phone</label>
-      <input type="text" />
+      <div>
+        <label for="phone">Phone</label>
+        <input type="text" name="phone"  class="block w-full"/>
+      </div>
 
-      <label>Comments</label>
+      <div>
+        <label>
+          What are the pain points for managing your organization's online presence?
+          <textarea class="h-40 w-full"></textarea>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          What other websites/organizations might you draw inspiration from?
+          <textarea class="h-40 w-full"></textarea>
+        </label>
+      </div>
+
+      <fieldset>
+        <legend>What services would you be interested in discussing?</legend>
+        <div class="checkbox-container my-4">
+          <input type="checkbox" name="static" id="static" class="col-start-1">
+          <label for="static" class="col-start-2">
+            Custom content-focussed static websites
+          </label>
+
+          <input type="checkbox" name="internalApp" id="internalApp" class="col-start-1">
+          <label for="internalApp">
+            Custom internal applications 
+            <div class="text-sm text-slate-600">
+              (Administration, data management, data collection)
+            </div>
+          </label>
+
+
+          <input type="checkbox" name="externalApp" id="externalApp">
+          <label for="externalApp">
+            Custom public-facing applications 
+            <div class="text-sm text-slate-600">
+              (Outreach, education, marketing)
+            </div>
+          </label>
+
+          <input type="checkbox" name="database" id="database">
+          <label for="database">
+            Database management
+          </label>
+
+          <input type="checkbox" name="other" id="other">
+          <label for="other">Other</label>
+
+        </div>
+      </fieldset>
+
+
+<!-- 
+      <fieldset>
+        <legend>How likely would you need an internal custom web application?</legend>
+        <div class="flex justify-between">
+          <label>
+            <input type="radio" name="internalApp" value="1"> 1
+          </label>
+          <label>
+            <input type="radio" name="internalApp" value="2"> 2
+          </label>
+          <label>
+            <input type="radio" name="internalApp" value="3"> 3
+          </label>
+          <label>
+            <input type="radio" name="internalApp"  value="4"> 4
+          </label>
+          <label>
+            <input type="radio" name="internalApp"  value="5"> 5
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>How likely would you need a public-facing custom web application?</legend>
+        <div class="flex justify-between">
+          <label>
+            <input type="radio" name="externalApp" value="1"> 1
+          </label>
+          <label>
+            <input type="radio" name="externalApp" value="2"> 2
+          </label>
+          <label>
+            <input type="radio" name="externalApp" value="3"> 3
+          </label>
+          <label>
+            <input type="radio" name="externalApp"  value="4"> 4
+          </label>
+          <label>
+            <input type="radio" name="externalApp"  value="5"> 5
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>How likely would you need a content focused static website?</legend>
+        <div class="flex justify-between">
+          <label>
+            <input type="radio" name="website" value="1"> 1
+          </label>
+          <label>
+            <input type="radio" name="website" value="2"> 2
+          </label>
+          <label>
+            <input type="radio" name="website" value="3"> 3
+          </label>
+          <label>
+            <input type="radio" name="website"  value="4"> 4
+          </label>
+          <label>
+            <input type="radio" name="website"  value="5"> 5
+          </label>
+        </div>
+      </fieldset> -->
+
+      <label>Other questions/comments:</label>
       <textarea class="h-40 w-full"></textarea>
       <button class="btn button">Submit</button>
     </form>
   </section>
 </BaseLayout>
+
+
+<style>
+  .checkbox-container {
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+  input, textarea {
+    border: 1px solid gray;
+  }
+</style>
