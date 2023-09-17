@@ -12,7 +12,7 @@ import Header from "~/components/header.astro";
     <form class="m-auto flex w-full max-w-lg flex-col gap-8" data-netlify="true">
       <div>
         <label for="name">Name</label>
-        <input type="text" name="name" class="block w-full" />
+        <input type="text" name="name" class="block w-full" required/>
       </div>
 
       <div>
@@ -21,21 +21,26 @@ import Header from "~/components/header.astro";
       </div>
 
       <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" class="block w-full" required>
+      </div>
+
+      <div>
         <label for="phone">Phone</label>
-        <input type="text" name="phone"  class="block w-full"/>
+        <input type="text" name="phone"  class="block w-full" />
       </div>
 
       <div>
         <label>
           What are the pain points for managing your organization's online presence?
-          <textarea class="h-40 w-full"></textarea>
+          <textarea class="h-40 w-full" name="painpoints"></textarea>
         </label>
       </div>
 
       <div>
         <label>
           What other websites/organizations might you draw inspiration from?
-          <textarea class="h-40 w-full"></textarea>
+          <textarea class="h-40 w-full" name="inspiration"></textarea>
         </label>
       </div>
 
