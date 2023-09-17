@@ -22,12 +22,12 @@ import Header from "~/components/header.astro";
 
       <div>
         <label for="email">Email</label>
-        <input type="text" name="email" class="block w-full" required>
+        <input type="email" name="email" class="block w-full" required>
       </div>
 
       <div>
         <label for="phone">Phone</label>
-        <input type="text" name="phone"  class="block w-full" />
+        <input type="tel" name="phone"  class="block w-full" />
       </div>
 
       <div>
@@ -81,72 +81,9 @@ import Header from "~/components/header.astro";
       </fieldset>
 
 
-<!-- 
-      <fieldset>
-        <legend>How likely would you need an internal custom web application?</legend>
-        <div class="flex justify-between">
-          <label>
-            <input type="radio" name="internalApp" value="1"> 1
-          </label>
-          <label>
-            <input type="radio" name="internalApp" value="2"> 2
-          </label>
-          <label>
-            <input type="radio" name="internalApp" value="3"> 3
-          </label>
-          <label>
-            <input type="radio" name="internalApp"  value="4"> 4
-          </label>
-          <label>
-            <input type="radio" name="internalApp"  value="5"> 5
-          </label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>How likely would you need a public-facing custom web application?</legend>
-        <div class="flex justify-between">
-          <label>
-            <input type="radio" name="externalApp" value="1"> 1
-          </label>
-          <label>
-            <input type="radio" name="externalApp" value="2"> 2
-          </label>
-          <label>
-            <input type="radio" name="externalApp" value="3"> 3
-          </label>
-          <label>
-            <input type="radio" name="externalApp"  value="4"> 4
-          </label>
-          <label>
-            <input type="radio" name="externalApp"  value="5"> 5
-          </label>
-        </div>
-      </fieldset>
-
-      <fieldset>
-        <legend>How likely would you need a content focused static website?</legend>
-        <div class="flex justify-between">
-          <label>
-            <input type="radio" name="website" value="1"> 1
-          </label>
-          <label>
-            <input type="radio" name="website" value="2"> 2
-          </label>
-          <label>
-            <input type="radio" name="website" value="3"> 3
-          </label>
-          <label>
-            <input type="radio" name="website"  value="4"> 4
-          </label>
-          <label>
-            <input type="radio" name="website"  value="5"> 5
-          </label>
-        </div>
-      </fieldset> -->
-
       <label>Other questions/comments:</label>
-      <textarea class="h-40 w-full"></textarea>
+      <textarea class="h-40 w-full" name="questionsComments"></textarea>
+      
       <button class="btn button">Submit</button>
     </form>
   </section>
