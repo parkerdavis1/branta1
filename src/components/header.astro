@@ -1,28 +1,33 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
-import branta from '~/assets/Branta Web-logos_black-trim.png'
-import brantaSVG from '~/assets/Branta Web-logos_transparent.svg'
-import brantaGreen from '~/assets/Branta Web-logos_transparent2.png'
+import branta from "~/assets/Branta Web-logos_black-trim.png";
+import brantaSVG from "~/assets/Branta Web-logos_transparent.svg";
+import brantaGreen from "~/assets/Branta Web-logos_transparent2.png";
 
 const navItems: Array<NavItem> = [
   { title: "Services", url: "/#services" },
   { title: "About", url: "/#about" },
 ];
 
-const { fixed } = Astro.props
+const { fixed } = Astro.props;
 ---
 
 <header
   id="page-header"
-  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-2 sm:px-8 py-2"
-  class:list={[fixed ? 'fixed-header' : 'text-white']}
+  class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-2 py-2 sm:px-8"
+  class:list={[fixed ? "fixed-header" : "text-white"]}
   data-fixed={fixed}
 >
   <a class="flex items-center gap-3 hover:!text-default" href="/">
-    <img src={branta.src} alt="Branta Web" class="h-12 opacity-0 transition-all duration-500" id="logo">
+    <img
+      src={branta.src}
+      alt="Branta Web"
+      class="h-12 opacity-0 transition-all duration-500"
+      id="logo"
+    />
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -45,7 +50,7 @@ const { fixed } = Astro.props
         class="btn sm:hidden"
         aria-label="Navigation"
       >
-        <Icon pack="mdi" name="menu" class="h-8" />
+        <Icon name="mdi:menu" class="h-8" />
       </button>
     </div>
 
@@ -59,7 +64,7 @@ const { fixed } = Astro.props
               class="btn"
               aria-label="Close navigation"
             >
-              <Icon pack="mdi" name="close" class="h-8" />
+              <Icon name="mdi:close" class="h-8" />
             </button>
           </header>
           <nav>
